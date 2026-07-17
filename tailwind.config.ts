@@ -8,7 +8,16 @@ export default {
         brand: "#3D81E3",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: [
+          "Inter",
+          "PingFang SC",
+          "Hiragino Sans GB",
+          "Noto Sans CJK SC",
+          "Microsoft YaHei",
+          "Segoe UI",
+          "system-ui",
+          "sans-serif",
+        ],
       },
     },
   },
