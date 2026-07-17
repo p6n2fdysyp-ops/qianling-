@@ -1,0 +1,13 @@
+node_modules
+dist
+.vercel
+.pnpm-store
+.DS_Store
+*.tsbuildinfo
+
+work
+outputs
+
+.env
+.env.*
+!.env.example
