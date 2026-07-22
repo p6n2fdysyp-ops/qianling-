@@ -38,22 +38,16 @@ const snapshotDateLabel = "2026 年 7 月 22 日";
 
 const heroStats = [
   {
-    icon: Library,
     value: "320+",
-    label: "已收录工具 / 智能体 / 仓库",
-    iconClass: "text-[#D8F6FF]",
+    label: "已收录工具 / Agent / Repo",
   },
   {
-    icon: Activity,
     value: "每周更新",
     label: "持续追踪热度、场景与信号",
-    iconClass: "text-[#93EAFF]",
   },
   {
-    icon: Star,
     value: "高星优先",
     label: "优先展示高星且可落地项目",
-    iconClass: "text-[#E8F4FF]",
   },
 ];
 
@@ -568,32 +562,24 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.95, duration: 0.7 }}
           >
-            {heroStats.map((item, index) => {
-              const Icon = item.icon;
-
-              return (
-                <motion.article
-                  key={item.label}
-                  className="liquid-glass rounded-[26px] border border-white/14 px-6 py-6 text-left"
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1 + index * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <div className="relative">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-[18px] border border-white/10 bg-white/[0.03] shadow-[inset_0_1px_1px_rgba(255,255,255,0.08)]">
-                      <Icon className={`h-5 w-5 ${item.iconClass}`} />
-                    </div>
-                  </div>
-
-                  <div className="mt-10">
-                    <p className="text-[2rem] font-semibold tracking-tight text-white md:text-[2.2rem]">
-                      {item.value}
-                    </p>
-                    <p className="mt-3 text-base leading-7 text-white/62">{item.label}</p>
-                  </div>
-                </motion.article>
-              );
-            })}
+            {heroStats.map((item, index) => (
+              <motion.article
+                key={item.label}
+                className="relative overflow-hidden rounded-[30px] border border-white/18 bg-black/30 px-8 py-9 text-left shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_14px_40px_rgba(0,0,0,0.18)] backdrop-blur-[2px]"
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1 + index * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="pointer-events-none absolute inset-0 rounded-[30px] border border-white/[0.03]" />
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" />
+                <div className="relative">
+                  <p className="text-[2.25rem] font-semibold tracking-tight text-white md:text-[2.5rem]">
+                    {item.value}
+                  </p>
+                  <p className="mt-5 text-[1.05rem] leading-8 text-white/60">{item.label}</p>
+                </div>
+              </motion.article>
+            ))}
           </motion.div>
         </section>
 
