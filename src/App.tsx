@@ -32,6 +32,8 @@ const navLinks = [
 ];
 
 const macMenu = ["精选", "Agent", "技能", "雷达", "收录", "文档"];
+const siteUrl = "https://qianling-three.vercel.app/";
+const repoUrl = "https://github.com/p6n2fdysyp-ops/qianling-";
 
 const heroStats = [
   { value: "320+", label: "已收录工具 / Agent / Repo" },
@@ -1053,6 +1055,90 @@ export default function App() {
             ))}
           </div>
         </section>
+
+        <footer className="border-t border-white/10 px-6 py-14">
+          <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
+            <div>
+              <div className="flex items-center gap-3 text-white">
+                <LogoMark className="h-8 w-8" />
+                <span className="text-lg font-semibold tracking-tight">Aura Atlas</span>
+              </div>
+              <p className="mt-5 max-w-xl text-sm leading-7 text-white/58">
+                一个面向中文用户的 AI 工具与智能体发现平台，聚合 AIGC 工具、热门 Agent 与
+                GitHub 高星 skills，帮助团队更快做选型、收藏、比较与长期沉淀。
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={siteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/72 transition-all hover:bg-white/[0.08]"
+                >
+                  <ArrowUpRight className="h-4 w-4" />
+                  公开访问
+                </a>
+                <a
+                  href={repoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/72 transition-all hover:bg-white/[0.08]"
+                >
+                  <Github className="h-4 w-4" />
+                  GitHub 仓库
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold text-white">站内导航</p>
+              <div className="mt-5 space-y-3 text-sm text-white/55">
+                <a href="#discover" className="block transition-colors hover:text-white">
+                  精选库
+                </a>
+                <a href="#capabilities" className="block transition-colors hover:text-white">
+                  核心能力
+                </a>
+                <a href="#scenarios" className="block transition-colors hover:text-white">
+                  适用场景
+                </a>
+                <a href="#github" className="block transition-colors hover:text-white">
+                  GitHub 榜单
+                </a>
+                <a href="#plans" className="block transition-colors hover:text-white">
+                  价格方案
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold text-white">公开信息</p>
+              <div className="mt-5 space-y-3 text-sm text-white/55">
+                <a
+                  href={`${repoUrl}/issues`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block transition-colors hover:text-white"
+                >
+                  提交收录建议
+                </a>
+                <a
+                  href={`${repoUrl}/commits/main`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block transition-colors hover:text-white"
+                >
+                  查看更新记录
+                </a>
+                <span className="block">部署平台：Vercel</span>
+                <span className="block">当前公开域名：qianling-three.vercel.app</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-sm text-white/38">
+            <p>© 2026 Aura Atlas. Built for discovering AI tools, agents, and GitHub skills.</p>
+          </div>
+        </footer>
       </div>
     </div>
   );

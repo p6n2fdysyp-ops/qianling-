@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qianling-three.vercel.app/sitemap.xml
