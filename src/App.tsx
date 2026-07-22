@@ -41,10 +41,9 @@ const heroStats = [
     icon: Library,
     eyebrow: "精选规模",
     value: "320+",
-    valueClass: "text-[2rem] md:text-[2.2rem]",
+    valueClass: "text-[1.85rem] md:text-[2.05rem]",
     label: "已收录工具 / 智能体 / 仓库",
     meta: "覆盖 AIGC、智能体、GitHub 技能与工作流项目",
-    micro: "目录广度",
     glow: "from-[#4BA8FF]/12 via-[#A4F4FD]/4 to-transparent",
     iconClass: "bg-[#A4F4FD]/10 text-[#D8F6FF]",
   },
@@ -52,10 +51,9 @@ const heroStats = [
     icon: Activity,
     eyebrow: "更新频率",
     value: "每周更新",
-    valueClass: "text-[1.5rem] md:text-[1.75rem]",
+    valueClass: "text-[1.32rem] md:text-[1.55rem]",
     label: "持续追踪热度、场景与信号",
     meta: "同步社区趋势、产品变化与高价值项目动态",
-    micro: "更新节奏",
     glow: "from-[#173A7A]/14 via-[#00D2FF]/5 to-transparent",
     iconClass: "bg-[#00D2FF]/10 text-[#93EAFF]",
   },
@@ -63,10 +61,9 @@ const heroStats = [
     icon: Star,
     eyebrow: "筛选策略",
     value: "高星优先",
-    valueClass: "text-[1.5rem] md:text-[1.75rem]",
+    valueClass: "text-[1.32rem] md:text-[1.55rem]",
     label: "优先展示高星且可落地项目",
     meta: "综合 Stars、文档质量、场景清晰度与可交付性",
-    micro: "筛选逻辑",
     glow: "from-[#2F6F9B]/12 via-[#8AC5FF]/5 to-transparent",
     iconClass: "bg-[#8AC5FF]/10 text-[#E8F4FF]",
   },
@@ -589,36 +586,38 @@ export default function App() {
               return (
                 <motion.article
                   key={item.eyebrow}
-                  className="group relative overflow-hidden rounded-[26px] border border-white/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] px-5 py-5 text-left shadow-[0_10px_36px_rgba(0,0,0,0.16)] backdrop-blur-xl"
+                  className="group relative overflow-hidden rounded-[26px] border border-white/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.028),rgba(255,255,255,0.01))] px-5 py-4.5 text-left shadow-[0_8px_30px_rgba(0,0,0,0.14)] backdrop-blur-xl"
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 + index * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.glow} opacity-75`} />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white/[0.015] to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-white/[0.015] to-transparent" />
+                  <div className="pointer-events-none absolute -right-10 top-[-28px] h-28 w-28 rounded-full bg-white/[0.02] blur-3xl" />
 
                   <div className="relative flex items-start justify-between gap-4">
-                    <div
-                      className={`flex h-11 w-11 items-center justify-center rounded-[18px] border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)] ${item.iconClass}`}
-                    >
-                      <Icon className="h-4.5 w-4.5" />
+                    <div className="relative">
+                      <div className="absolute inset-0 scale-110 rounded-[18px] bg-white/[0.02] blur-xl" />
+                      <div
+                        className={`relative flex h-10 w-10 items-center justify-center rounded-[18px] border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)] ${item.iconClass}`}
+                      >
+                        <Icon className="h-4.5 w-4.5" />
+                      </div>
                     </div>
-                    <div className="flex flex-col items-end gap-2">
-                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] tracking-[0.18em] text-white/48">
+                    <div className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-white/30" />
+                      <span className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[10px] tracking-[0.16em] text-white/48">
                         {item.eyebrow}
-                      </span>
-                      <span className="text-[10px] uppercase tracking-[0.22em] text-white/30">
-                        {item.micro}
                       </span>
                     </div>
                   </div>
 
-                  <div className="relative mt-6">
+                  <div className="relative mt-5">
                     <p className={`${item.valueClass} font-semibold tracking-tight text-white`}>
                       {item.value}
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-white/76">{item.label}</p>
-                    <p className="mt-4 max-w-[18rem] text-[11px] leading-5 text-white/38">{item.meta}</p>
+                    <p className="mt-2 text-[15px] leading-6 text-white/76">{item.label}</p>
+                    <p className="mt-3 max-w-[17rem] text-[11px] leading-5 text-white/36">{item.meta}</p>
                   </div>
                 </motion.article>
               );
