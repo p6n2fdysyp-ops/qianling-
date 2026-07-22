@@ -39,7 +39,7 @@ const snapshotDateLabel = "2026 年 7 月 22 日";
 const heroStats = [
   {
     value: "320+",
-    label: "已收录工具 / Agent / Repo",
+    label: "已收录工具 / 智能体 / 仓库",
   },
   {
     value: "每周更新",
@@ -557,28 +557,19 @@ export default function App() {
           </motion.p>
 
           <motion.div
-            className="mt-10 grid w-full max-w-[68rem] gap-3 md:grid-cols-3"
+            className="mt-10 grid w-full max-w-5xl gap-4 md:grid-cols-3"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.95, duration: 0.7 }}
           >
-            {heroStats.map((item, index) => (
-              <motion.article
+            {heroStats.map((item) => (
+              <div
                 key={item.label}
-                className="relative overflow-hidden rounded-[30px] border border-white/18 bg-black/30 px-8 py-9 text-left shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_14px_40px_rgba(0,0,0,0.18)] backdrop-blur-[2px]"
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 + index * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="liquid-glass rounded-2xl px-5 py-5 text-left"
               >
-                <div className="pointer-events-none absolute inset-0 rounded-[30px] border border-white/[0.03]" />
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/18 to-transparent" />
-                <div className="relative">
-                  <p className="text-[2.25rem] font-semibold tracking-tight text-white md:text-[2.5rem]">
-                    {item.value}
-                  </p>
-                  <p className="mt-5 text-[1.05rem] leading-8 text-white/60">{item.label}</p>
-                </div>
-              </motion.article>
+                <p className="text-2xl font-semibold tracking-tight text-white">{item.value}</p>
+                <p className="mt-2 text-sm leading-6 text-white/55">{item.label}</p>
+              </div>
             ))}
           </motion.div>
         </section>
