@@ -31,12 +31,13 @@ const navLinks = [
   { label: "价格方案", href: "#plans" },
 ];
 
-const macMenu = ["精选", "Agent", "技能", "雷达", "收录", "文档"];
+const macMenu = ["精选", "智能体", "技能", "雷达", "收录", "文档"];
 const siteUrl = "https://qianling-three.vercel.app/";
 const repoUrl = "https://github.com/p6n2fdysyp-ops/qianling-";
+const snapshotDateLabel = "2026 年 7 月 22 日";
 
 const heroStats = [
-  { value: "320+", label: "已收录工具 / Agent / Repo" },
+  { value: "320+", label: "已收录工具 / 智能体 / 仓库" },
   { value: "每周更新", label: "持续追踪热度、场景与信号" },
   { value: "高星优先", label: "优先展示高星且可落地项目" },
 ];
@@ -44,8 +45,8 @@ const heroStats = [
 const sidebarItems = [
   { icon: LayoutDashboard, label: "全部精选", count: 284, active: true },
   { icon: Sparkles, label: "AIGC 工具", count: 96 },
-  { icon: Bot, label: "热门 Agent", count: 48 },
-  { icon: Github, label: "GitHub Skills", count: 72 },
+  { icon: Bot, label: "热门智能体", count: 48 },
+  { icon: Github, label: "GitHub 技能", count: 72 },
   { icon: Boxes, label: "Prompt / MCP", count: 33 },
   { icon: Activity, label: "每周雷达", count: 12 },
 ];
@@ -60,20 +61,20 @@ const labels = [
 const toolFeed = [
   {
     name: "Dify",
-    category: "Agent 工作流",
-    preview: "面向企业 AI 应用的工作流编排、知识库与多步 Agent 平台。",
+    category: "智能体工作流",
+    preview: "面向企业 AI 应用的工作流编排、知识库与多步智能体平台。",
     stars: "149k",
     active: true,
   },
   {
     name: "MarkItDown",
-    category: "GitHub Skill",
+    category: "GitHub 技能",
     preview: "把 Office、PDF 与多格式文件转成适合大模型读取的 Markdown。",
     stars: "166k",
   },
   {
     name: "browser-use",
-    category: "浏览器 Agent",
+    category: "浏览器智能体",
     preview: "让 AI 真正操作网页，适合自动化测试、表单流程和抓取任务。",
     stars: "105k",
   },
@@ -85,7 +86,7 @@ const toolFeed = [
   },
   {
     name: "OpenHands",
-    category: "Coding Agent",
+    category: "编码智能体",
     preview: "面向研发场景的 AI 开发代理，适合实现与迭代代码任务。",
     stars: "81k",
   },
@@ -102,10 +103,10 @@ const signalGroups = [
     title: "值得立刻收藏",
     count: 8,
     color: "#ffffff",
-    items: ["MarkItDown — 文档转 Markdown", "Dify — workflow + RAG + agents"],
+    items: ["MarkItDown — 文档转 Markdown", "Dify — 工作流 + RAG + 智能体"],
   },
   {
-    title: "Agent 热门方向",
+    title: "智能体热门方向",
     count: 14,
     color: "#e5e5e5",
     items: ["browser-use — 浏览器自动化", "OpenHands — AI coding 循环"],
@@ -117,7 +118,7 @@ const signalGroups = [
     items: ["ComfyUI — 节点式 pipeline", "Fooocus — 更轻量生成体验"],
   },
   {
-    title: "Skills / Protocol",
+    title: "技能 / 协议",
     count: 19,
     color: "#525252",
     items: ["MCP Servers — 协议连接器", "GenAI for Beginners — 学习体系"],
@@ -138,7 +139,7 @@ const valueCards = [
   {
     icon: Library,
     title: "统一沉淀知识",
-    description: "把团队评估过的工具、Agent 与技能收成自己的长期 AI 资产库。",
+    description: "把团队评估过的工具、智能体与技能收成自己的长期 AI 资产库。",
   },
   {
     icon: ShieldCheck,
@@ -172,7 +173,7 @@ const scenarioCards = [
   {
     icon: Users,
     title: "AI 从业者 / 顾问",
-    description: "建立自己的高质量工具库、案例库和 GitHub skill 推荐体系，方便对外服务。",
+    description: "建立自己的高质量工具库、案例库和 GitHub 技能推荐体系，方便对外服务。",
   },
 ];
 
@@ -180,12 +181,12 @@ const faqItems = [
   {
     question: "Aura Atlas 收录什么内容？",
     answer:
-      "平台主要收录三类内容：AIGC 工具、热门 Agent，以及 GitHub 上高星且有实际使用价值的 skills / repo。我们更关注能否真正用于产品、业务或工作流，而不只是单纯热度。",
+      "平台主要收录三类内容：AIGC 工具、热门智能体，以及 GitHub 上高星且有实际使用价值的技能仓库。我们更关注能否真正用于产品、业务或工作流，而不只是单纯热度。",
   },
   {
     question: "项目是按什么标准进入精选库的？",
     answer:
-      "会综合看 GitHub stars、更新频率、文档完整度、场景清晰度、可落地性和社区反馈。目标是帮助中文用户更快判断“是否值得花时间深入了解”。",
+      "会综合看 GitHub Stars、更新频率、文档完整度、场景清晰度、可落地性和社区反馈。目标是帮助中文用户更快判断“是否值得花时间深入了解”。",
   },
   {
     question: "如果我想提交一个工具或仓库怎么办？",
@@ -229,15 +230,15 @@ const platformTracks = [
   },
   {
     id: "agents",
-    title: "流行 Agent 库",
+    title: "流行智能体库",
     eyebrow: "浏览器 / 编码 / 工作流",
     description:
-      "从浏览器自动化到 AI coding，再到企业级工作流 Agent，这里收录真正有热度和使用反馈的项目。",
+      "从浏览器自动化到 AI coding，再到企业级工作流智能体，这里收录真正有热度和使用反馈的项目。",
     items: [
       {
         name: "Dify",
         stars: "149k",
-        note: "可视化编排 prompt app、RAG 与多步 agent workflow，适合企业级 AI 入口。",
+        note: "可视化编排 Prompt 应用、RAG 与多步智能体工作流，适合企业级 AI 入口。",
         url: "https://github.com/langgenius/dify",
       },
       {
@@ -296,7 +297,7 @@ const plans = [
     yearly: "¥0",
     description: "适合先浏览趋势、收藏少量工具并观察 AI 生态变化的个人用户。",
     features: [
-      "浏览 AIGC / Agent / GitHub Skills 精选榜",
+      "浏览 AIGC / 智能体 / GitHub 技能精选榜",
       "收藏最多 20 个工具或仓库",
       "每周趋势雷达摘要",
       "基础标签与场景筛选",
@@ -310,7 +311,7 @@ const plans = [
     description: "适合高频试用新工具、搭建个人 AI 栈和持续跟踪 GitHub 信号的进阶用户。",
     features: [
       "无限收藏与个人工具栈管理",
-      "GitHub Stars / Forks / Topic 高级筛选",
+      "GitHub Stars / Forks / Topics 高级筛选",
       "自定义 watchlist 与更新提醒",
       "Aura AI 推荐相似工具与替代方案",
       "导出团队采购与评估清单",
@@ -320,12 +321,12 @@ const plans = [
     tier: "团队版",
     monthly: "¥299/月",
     yearly: "¥2,990/年",
-    description: "面向团队协作与企业内 AI 选型，统一沉淀工具、Agent 与技能资源库。",
+    description: "面向团队协作与企业内 AI 选型，统一沉淀工具、智能体与技能资源库。",
     features: [
       "团队私有收藏夹与角色权限",
       "共享评估标准与内部评分体系",
       "飞书 / Slack 每周雷达推送",
-      "Agent 工作流模板与提交审核",
+      "智能体工作流模板与提交审核",
       "采购决策板与内部知识沉淀",
     ],
     pro: true,
@@ -495,7 +496,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.65 }}
           >
-            <SectionEyebrow label="中文 AI 工具导航平台" tag="AIGC + Agent + GitHub Skills" />
+            <SectionEyebrow label="中文 AI 工具导航平台" tag="AIGC + 智能体 + GitHub 技能" />
           </motion.div>
 
           <motion.h1
@@ -517,7 +518,7 @@ export default function App() {
             transition={{ delay: 0.5, duration: 0.7 }}
           >
             Aura Atlas 是一个面向中文用户的 AI 工具与智能体发现平台。它把 AIGC 工具、热门
-            Agent，以及 GitHub 上高星且真正有实用价值的 skills / repo 收成一个统一入口，
+            智能体，以及 GitHub 上高星且真正有实用价值的技能仓库收成一个统一入口，
             帮你更快做选型、收藏、比较和内部沉淀。
           </motion.p>
 
@@ -543,7 +544,7 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.85, duration: 0.6 }}
           >
-            GitHub 热度快照更新于 2026 年 7 月 16 日
+            GitHub 热度快照更新于 {snapshotDateLabel}
           </motion.p>
 
           <motion.div
@@ -571,7 +572,7 @@ export default function App() {
           transition={{ delay: 0.9, duration: 0.65 }}
         >
           <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-6 text-xs">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-8">
               <span className="font-semibold text-white">Aura Atlas</span>
               <div className="flex items-center gap-4 text-white/65">
                 {macMenu.map((item, index) => (
@@ -590,7 +591,7 @@ export default function App() {
 
             <div className="flex items-center gap-2 text-white/65">
               <Search className="h-3.5 w-3.5" />
-              <span>2026-07-16 · 热度信号已同步</span>
+              <span>{snapshotDateLabel} · 热度信号已同步</span>
             </div>
           </div>
         </motion.div>
@@ -664,7 +665,7 @@ export default function App() {
                 <div className="border-b border-white/10 px-4 py-3">
                   <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white/40">
                     <Search className="h-4 w-4" />
-                    <span>搜索工具、Agent、GitHub repo</span>
+                    <span>搜索工具、智能体、GitHub 仓库</span>
                   </div>
                 </div>
 
@@ -723,7 +724,7 @@ export default function App() {
                         </div>
                         <div className="text-sm">
                           <p className="font-medium text-white">langgenius/dify</p>
-                          <p className="text-white/45">Agent workflow · RAG · Prompt apps</p>
+                          <p className="text-white/45">智能体工作流 · RAG · Prompt 应用</p>
                         </div>
                         <span className="rounded-full border border-white/10 bg-white/[0.03] px-2 py-1 text-[11px] text-white/60">
                           企业级热门项目
@@ -765,7 +766,7 @@ export default function App() {
                   </div>
 
                   <div className="mt-6 flex flex-wrap gap-2">
-                    {["Workflow", "RAG", "Agentic", "Prompt App", "Observability"].map((tag) => (
+                    {["工作流", "RAG", "智能体", "Prompt 应用", "可观测性"].map((tag) => (
                       <span
                         key={tag}
                         className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-white/55"
@@ -795,7 +796,7 @@ export default function App() {
                 一次筛出真正值得投入的项目
               </h2>
               <p className="mt-6 max-w-md text-base leading-[1.6] text-white/60">
-                Aura Atlas 不只看 GitHub stars。我们把社区热度、文档完整度、场景匹配度、交付可能性
+                Aura Atlas 不只看 GitHub Stars。我们把社区热度、文档完整度、场景匹配度、交付可能性
                 和中文理解一起放进一个更适合产品决策的视图里，让你更快分辨“看起来很火”和“真的能用”。
               </p>
 
@@ -821,7 +822,7 @@ export default function App() {
               <div className="flex items-center justify-between">
                 <p className="text-sm font-medium text-white">今日信号看板 · 52 个项目已完成分层</p>
                 <span className="rounded-full border border-white/10 bg-white/[0.04] px-2 py-1 text-[11px] text-white/45">
-                  Snapshot · 2026-07-16
+                  快照 · {snapshotDateLabel}
                 </span>
               </div>
 
@@ -936,9 +937,9 @@ export default function App() {
           className="mx-auto max-w-6xl border-t border-white/10 px-6 py-20 md:py-28"
         >
           <div className="mb-10">
-            <SectionEyebrow label="三大核心内容库" tag="AIGC / Agent / GitHub Skills" />
+            <SectionEyebrow label="三大核心内容库" tag="AIGC / 智能体 / GitHub 技能" />
             <h2 className="mt-5 text-3xl font-semibold tracking-tight leading-[1.05] md:text-5xl">
-              把 AI 工具、热门 Agent 和 GitHub 高星技能
+              把 AI 工具、热门智能体和 GitHub 高星技能
               <br />
               收成一个真正可逛、可比、可沉淀的平台
             </h2>
@@ -1130,8 +1131,8 @@ export default function App() {
                 <span className="text-lg font-semibold tracking-tight">Aura Atlas</span>
               </div>
               <p className="mt-5 max-w-xl text-sm leading-7 text-white/58">
-                一个面向中文用户的 AI 工具与智能体发现平台，聚合 AIGC 工具、热门 Agent 与
-                GitHub 高星 skills，帮助团队更快做选型、收藏、比较与长期沉淀。
+                一个面向中文用户的 AI 工具与智能体发现平台，聚合 AIGC 工具、热门智能体与
+                GitHub 高星技能，帮助团队更快做选型、收藏、比较与长期沉淀。
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
@@ -1202,7 +1203,7 @@ export default function App() {
           </div>
 
           <div className="mx-auto mt-10 max-w-6xl border-t border-white/10 pt-6 text-sm text-white/38">
-            <p>© 2026 Aura Atlas. Built for discovering AI tools, agents, and GitHub skills.</p>
+            <p>© 2026 Aura Atlas. 面向中文用户发现 AI 工具、智能体与 GitHub 技能。</p>
           </div>
         </footer>
       </div>
