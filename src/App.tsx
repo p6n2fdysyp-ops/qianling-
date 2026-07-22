@@ -176,6 +176,29 @@ const scenarioCards = [
   },
 ];
 
+const faqItems = [
+  {
+    question: "Aura Atlas 收录什么内容？",
+    answer:
+      "平台主要收录三类内容：AIGC 工具、热门 Agent，以及 GitHub 上高星且有实际使用价值的 skills / repo。我们更关注能否真正用于产品、业务或工作流，而不只是单纯热度。",
+  },
+  {
+    question: "项目是按什么标准进入精选库的？",
+    answer:
+      "会综合看 GitHub stars、更新频率、文档完整度、场景清晰度、可落地性和社区反馈。目标是帮助中文用户更快判断“是否值得花时间深入了解”。",
+  },
+  {
+    question: "如果我想提交一个工具或仓库怎么办？",
+    answer:
+      "你可以通过 GitHub 仓库的 Issues 提交收录建议，也可以后续扩展成表单提报。建议附上项目链接、适用场景、核心亮点和同类替代项，方便后续归档。",
+  },
+  {
+    question: "这个站后面还能扩展成真正的平台吗？",
+    answer:
+      "可以。当前首页已经具备官网基础，后续可以继续接登录、收藏、详情页、动态 GitHub 数据、后台审核和自定义域名，逐步演进成完整产品。",
+  },
+];
+
 const platformTracks = [
   {
     id: "aigc",
@@ -993,6 +1016,60 @@ export default function App() {
               >
                 继续浏览精选内容
               </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-6xl border-t border-white/10 px-6 py-20">
+          <div className="grid gap-12 md:grid-cols-[1fr_1.1fr]">
+            <div>
+              <SectionEyebrow label="常见问题" tag="FAQ + 提交入口" />
+              <h2 className="mt-5 text-3xl font-semibold tracking-tight leading-[1.05] md:text-5xl">
+                让第一次访问的人
+                <br />
+                也知道这个站能拿来做什么
+              </h2>
+              <p className="mt-5 max-w-xl text-sm leading-7 text-white/58 md:text-base">
+                如果你准备把站点正式发给同事、客户或合作伙伴，这一块能明显降低理解成本。
+                它直接解释平台收录内容、精选逻辑、提交方式和后续产品演进方向。
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={`${repoUrl}/issues`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/72 transition-all hover:bg-white/[0.08]"
+                >
+                  <Github className="h-4 w-4" />
+                  提交收录建议
+                </a>
+                <a
+                  href={siteUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/72 transition-all hover:bg-white/[0.08]"
+                >
+                  <ArrowUpRight className="h-4 w-4" />
+                  查看线上站点
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {faqItems.map((item, index) => (
+                <motion.article
+                  key={item.question}
+                  className="liquid-glass rounded-2xl p-5"
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.05 }}
+                >
+                  <h3 className="text-lg font-semibold tracking-tight text-white">{item.question}</h3>
+                  <p className="mt-3 text-sm leading-7 text-white/58">{item.answer}</p>
+                </motion.article>
+              ))}
             </div>
           </div>
         </section>
