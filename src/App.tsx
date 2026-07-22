@@ -37,9 +37,33 @@ const repoUrl = "https://github.com/p6n2fdysyp-ops/qianling-";
 const snapshotDateLabel = "2026 年 7 月 22 日";
 
 const heroStats = [
-  { value: "320+", label: "已收录工具 / 智能体 / 仓库" },
-  { value: "每周更新", label: "持续追踪热度、场景与信号" },
-  { value: "高星优先", label: "优先展示高星且可落地项目" },
+  {
+    icon: Library,
+    eyebrow: "精选规模",
+    value: "320+",
+    label: "已收录工具 / 智能体 / 仓库",
+    meta: "覆盖 AIGC、智能体、GitHub 技能与工作流项目",
+    glow: "from-[#4BA8FF]/18 via-[#A4F4FD]/8 to-transparent",
+    iconClass: "bg-[#A4F4FD]/12 text-[#D8F6FF]",
+  },
+  {
+    icon: Activity,
+    eyebrow: "更新频率",
+    value: "每周更新",
+    label: "持续追踪热度、场景与信号",
+    meta: "同步社区趋势、产品变化与高价值项目动态",
+    glow: "from-[#173A7A]/22 via-[#00D2FF]/10 to-transparent",
+    iconClass: "bg-[#00D2FF]/12 text-[#93EAFF]",
+  },
+  {
+    icon: Star,
+    eyebrow: "筛选策略",
+    value: "高星优先",
+    label: "优先展示高星且可落地项目",
+    meta: "综合 Stars、文档质量、场景清晰度与可交付性",
+    glow: "from-[#2F6F9B]/18 via-[#8AC5FF]/8 to-transparent",
+    iconClass: "bg-[#8AC5FF]/12 text-[#E8F4FF]",
+  },
 ];
 
 const sidebarItems = [
@@ -553,15 +577,41 @@ export default function App() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.95, duration: 0.7 }}
           >
-            {heroStats.map((item) => (
-              <div
-                key={item.label}
-                className="liquid-glass rounded-2xl px-5 py-5 text-left"
-              >
-                <p className="text-2xl font-semibold tracking-tight text-white">{item.value}</p>
-                <p className="mt-2 text-sm leading-6 text-white/55">{item.label}</p>
-              </div>
-            ))}
+            {heroStats.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.article
+                  key={item.eyebrow}
+                  className="group relative overflow-hidden rounded-[28px] border border-white/16 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] px-6 py-6 text-left shadow-[0_18px_60px_rgba(0,0,0,0.2)] backdrop-blur-xl"
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 + index * 0.08, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <div className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${item.glow} opacity-90`} />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white/[0.02] to-transparent" />
+
+                  <div className="relative flex items-start justify-between gap-4">
+                    <div
+                      className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.12)] ${item.iconClass}`}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <span className="rounded-full border border-white/10 bg-white/[0.05] px-3 py-1 text-[11px] tracking-[0.18em] text-white/48">
+                      {item.eyebrow}
+                    </span>
+                  </div>
+
+                  <div className="relative mt-8">
+                    <p className="text-[2.35rem] font-semibold tracking-tight text-white md:text-[2.6rem]">
+                      {item.value}
+                    </p>
+                    <p className="mt-3 text-base leading-7 text-white/78">{item.label}</p>
+                    <p className="mt-5 max-w-xs text-xs leading-6 text-white/40">{item.meta}</p>
+                  </div>
+                </motion.article>
+              );
+            })}
           </motion.div>
         </section>
 
